@@ -2,17 +2,25 @@
 
 [ext_resource type="Script" uid="uid://bknvcf4kvkuql" path="res://Player.cs" id="1_kpjcp"]
 [ext_resource type="Texture2D" uid="uid://c7orc23ja873a" path="res://icon.svg" id="2_kpjcp"]
+[ext_resource type="Script" uid="uid://boy61f80k3f47" path="res://Components/MovementComponent.cs" id="3_e80uo"]
 [ext_resource type="Script" uid="uid://dw44ok85hsmys" path="res://Components/InputComponent.cs" id="3_kne1u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_87wjg"]
 
-[node name="Player" type="CharacterBody2D" unique_id=1041329144]
+[node name="Player" type="CharacterBody2D" unique_id=1041329144 node_paths=PackedStringArray("InputComponent", "MovementComponent")]
 motion_mode = 1
 script = ExtResource("1_kpjcp")
+InputComponent = NodePath("InputComponent")
+MovementComponent = NodePath("MovementComponent")
 
 [node name="InputComponent" type="Node" parent="." unique_id=889903271]
 script = ExtResource("3_kne1u")
 metadata/_custom_type_script = "uid://dw44ok85hsmys"
+
+[node name="MovementComponent" type="Node" parent="." unique_id=291860220 node_paths=PackedStringArray("Target")]
+script = ExtResource("3_e80uo")
+Target = NodePath("..")
+metadata/_custom_type_script = "uid://boy61f80k3f47"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1688265275]
 texture = ExtResource("2_kpjcp")

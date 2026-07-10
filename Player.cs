@@ -1,6 +1,12 @@
 using Godot;
-using System;
 
-public partial class Player : Node2D
+public partial class Player : CharacterBody2D
 {
+    [Export]
+    InputComponent InputComponent { get; set; }
+
+    public override void _PhysicsProcess(double delta)
+    {
+        InputComponent.Update();
+    }
 }

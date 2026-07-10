@@ -1,16 +1,21 @@
 [gd_scene format=3 uid="uid://cif77hfv48pt2"]
 
-[ext_resource type="Script" uid="uid://bknvcf4kvkuql" path="res://Player1.cs" id="1_kpjcp"]
+[ext_resource type="Script" uid="uid://bknvcf4kvkuql" path="res://Player.cs" id="1_kpjcp"]
 [ext_resource type="Texture2D" uid="uid://c7orc23ja873a" path="res://icon.svg" id="2_kpjcp"]
+[ext_resource type="Script" uid="uid://dw44ok85hsmys" path="res://Components/InputComponent.cs" id="3_kne1u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_87wjg"]
 
-[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1041329144]
+[node name="Player" type="CharacterBody2D" unique_id=1041329144]
 motion_mode = 1
 script = ExtResource("1_kpjcp")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1602358732]
-shape = SubResource("RectangleShape2D_87wjg")
+[node name="InputComponent" type="Node" parent="." unique_id=889903271]
+script = ExtResource("3_kne1u")
+metadata/_custom_type_script = "uid://dw44ok85hsmys"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1688265275]
 texture = ExtResource("2_kpjcp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1602358732]
+shape = SubResource("RectangleShape2D_87wjg")

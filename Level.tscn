@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://ibmfbmothl6i"]
+
+[ext_resource type="Script" uid="uid://bed3nuw1fpyst" path="res://Level.cs" id="1_bexhn"]
+
+[node name="Level" type="Node2D" unique_id=1151588377]
+script = ExtResource("1_bexhn")
